@@ -21,7 +21,7 @@ class UserProfile(AbstractUser):
     avatar = models.ImageField(verbose_name=u'用户头像', upload_to='user/', default='default.jpg', help_text=u"用户头像")
     mobile = models.CharField(verbose_name=u"手机号",unique=True, max_length=11, help_text=u"手机号")
     part = models.IntegerField(verbose_name=u"所属部门", choices=DEPARTMENTS, help_text=u"所属部门")
-    fav_article = models.ForeignKey('Article',verbose_name=u"用户收藏文章", null=True, blank=True)
+    fav_article = models.ForeignKey('Articles',verbose_name=u"用户收藏文章", null=True, blank=True)
 
     def __str__(self):
         return self.username
